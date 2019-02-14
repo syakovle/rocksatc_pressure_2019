@@ -30,7 +30,8 @@ The pthread_join() function for threads is the equivalent of wait() for processe
 
 pthread_t read_thread, write_thread;
 printf("Initializing read/write");
-pthread_create(&read_thread, NULL, 
+pthread_create(&read_thread, NULL, recordRead, NULL);
+pthread_create(&write_thread, NULL, recordWrite, NULL);
 
 return 0;
 }
